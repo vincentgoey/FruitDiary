@@ -14,6 +14,11 @@
 		A3CEF7C923EFDA57001D076C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF7C723EFDA57001D076C /* LaunchScreen.storyboard */; };
 		A3CEF7D423EFDA57001D076C /* FruitDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7D323EFDA57001D076C /* FruitDiaryTests.swift */; };
 		A3CEF7DF23EFDA57001D076C /* FruitDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7DE23EFDA57001D076C /* FruitDiaryUITests.swift */; };
+		A3CEF7EE23F04CD3001D076C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7ED23F04CD3001D076C /* MainVC.swift */; };
+		A3CEF7F023F04E66001D076C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7EF23F04E66001D076C /* HomeVC.swift */; };
+		A3CEF7F223F04E7F001D076C /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7F123F04E7F001D076C /* AboutVC.swift */; };
+		A3CEF7F423F05441001D076C /* FruitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7F323F05441001D076C /* FruitModel.swift */; };
+		A3CEF7F823F054A9001D076C /* FruitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7F723F054A9001D076C /* FruitsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		A3CEF7DA23EFDA57001D076C /* FruitDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruitDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CEF7DE23EFDA57001D076C /* FruitDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDiaryUITests.swift; sourceTree = "<group>"; };
 		A3CEF7E023EFDA57001D076C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3CEF7ED23F04CD3001D076C /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		A3CEF7EF23F04E66001D076C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A3CEF7F123F04E7F001D076C /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		A3CEF7F323F05441001D076C /* FruitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModel.swift; sourceTree = "<group>"; };
+		A3CEF7F723F054A9001D076C /* FruitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,9 @@
 		A3CEF7BB23EFDA51001D076C /* FruitDiary */ = {
 			isa = PBXGroup;
 			children = (
+				A3CEF7F623F05494001D076C /* ViewModel */,
+				A3CEF7F523F05446001D076C /* Model */,
+				A3CEF7EC23F04CB9001D076C /* View */,
 				A3CEF7BC23EFDA51001D076C /* AppDelegate.swift */,
 				A3CEF7BE23EFDA51001D076C /* SceneDelegate.swift */,
 				A3CEF7C023EFDA51001D076C /* ViewController.swift */,
@@ -123,6 +136,32 @@
 				A3CEF7E023EFDA57001D076C /* Info.plist */,
 			);
 			path = FruitDiaryUITests;
+			sourceTree = "<group>";
+		};
+		A3CEF7EC23F04CB9001D076C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF7ED23F04CD3001D076C /* MainVC.swift */,
+				A3CEF7EF23F04E66001D076C /* HomeVC.swift */,
+				A3CEF7F123F04E7F001D076C /* AboutVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A3CEF7F523F05446001D076C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF7F323F05441001D076C /* FruitModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A3CEF7F623F05494001D076C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF7F723F054A9001D076C /* FruitsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +295,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3CEF7C123EFDA51001D076C /* ViewController.swift in Sources */,
+				A3CEF7F823F054A9001D076C /* FruitsViewModel.swift in Sources */,
+				A3CEF7F423F05441001D076C /* FruitModel.swift in Sources */,
+				A3CEF7F023F04E66001D076C /* HomeVC.swift in Sources */,
+				A3CEF7F223F04E7F001D076C /* AboutVC.swift in Sources */,
+				A3CEF7EE23F04CD3001D076C /* MainVC.swift in Sources */,
 				A3CEF7BD23EFDA51001D076C /* AppDelegate.swift in Sources */,
 				A3CEF7BF23EFDA51001D076C /* SceneDelegate.swift in Sources */,
 			);
