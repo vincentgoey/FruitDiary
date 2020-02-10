@@ -18,10 +18,12 @@ class MainVC: UITabBarController, UITabBarControllerDelegate {
     
     func setupTabBar() {
         let firstViewController = HomeVC()
-         let navigationController = UINavigationController(rootViewController: firstViewController)
-         navigationController.title = "Home"
-        navigationController.navigationBar.prefersLargeTitles = true
-         navigationController.tabBarItem.image = UIImage.init(named: "home_icon")
+        let navigationController = UINavigationController(rootViewController: firstViewController)
+        navigationController.title = "Home"
+//        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.tabBarItem.image = UIImage.init(named: "home_icon")
+        navigationController.navigationBar.barTintColor = hexStringToUIColor(hex: appConstant.themeColor)
+        
         
         let secondViewController = AboutVC()
         let secNavigationController = UINavigationController(rootViewController: secondViewController)

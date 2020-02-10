@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Fruit: Codable {
+struct Fruit: Decodable {
     
-    var id          :String
+    var id          :Int
     var type        :String
     var vitamins    :Int
     var image       :String

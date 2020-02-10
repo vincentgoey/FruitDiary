@@ -19,6 +19,17 @@
 		A3CEF7F223F04E7F001D076C /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7F123F04E7F001D076C /* AboutVC.swift */; };
 		A3CEF7F423F05441001D076C /* FruitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7F323F05441001D076C /* FruitModel.swift */; };
 		A3CEF7F823F054A9001D076C /* FruitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7F723F054A9001D076C /* FruitsViewModel.swift */; };
+		A3CEF7FB23F068BC001D076C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7FA23F068BC001D076C /* WebService.swift */; };
+		A3CEF7FD23F07B52001D076C /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7FC23F07B52001D076C /* Api.swift */; };
+		A3CEF80023F14573001D076C /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF7FF23F14573001D076C /* AppConstant.swift */; };
+		A3CEF80423F145AF001D076C /* AddFruitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF80223F145AF001D076C /* AddFruitVC.swift */; };
+		A3CEF80823F14614001D076C /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF80723F14614001D076C /* UIColor+Ext.swift */; };
+		A3CEF80E23F1466E001D076C /* FruitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF80C23F1466E001D076C /* FruitCell.swift */; };
+		A3CEF81223F146E5001D076C /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81123F146E5001D076C /* Singleton.swift */; };
+		A3CEF81423F14828001D076C /* Pin+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81323F14828001D076C /* Pin+Ext.swift */; };
+		A3CEF81623F153E8001D076C /* FruitEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81523F153E8001D076C /* FruitEntryModel.swift */; };
+		A3CEF81823F154A0001D076C /* FruitEntryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81723F154A0001D076C /* FruitEntryListViewModel.swift */; };
+		A3CEF81A23F15505001D076C /* FruitEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81923F15505001D076C /* FruitEntryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +68,17 @@
 		A3CEF7F123F04E7F001D076C /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		A3CEF7F323F05441001D076C /* FruitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModel.swift; sourceTree = "<group>"; };
 		A3CEF7F723F054A9001D076C /* FruitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewModel.swift; sourceTree = "<group>"; };
+		A3CEF7FA23F068BC001D076C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		A3CEF7FC23F07B52001D076C /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		A3CEF7FF23F14573001D076C /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		A3CEF80223F145AF001D076C /* AddFruitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFruitVC.swift; sourceTree = "<group>"; };
+		A3CEF80723F14614001D076C /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		A3CEF80C23F1466E001D076C /* FruitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCell.swift; sourceTree = "<group>"; };
+		A3CEF81123F146E5001D076C /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		A3CEF81323F14828001D076C /* Pin+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+Ext.swift"; sourceTree = "<group>"; };
+		A3CEF81523F153E8001D076C /* FruitEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitEntryModel.swift; sourceTree = "<group>"; };
+		A3CEF81723F154A0001D076C /* FruitEntryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitEntryListViewModel.swift; sourceTree = "<group>"; };
+		A3CEF81923F15505001D076C /* FruitEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitEntryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +129,14 @@
 		A3CEF7BB23EFDA51001D076C /* FruitDiary */ = {
 			isa = PBXGroup;
 			children = (
+				A3CEF81023F146D9001D076C /* Singleton */,
+				A3CEF80623F14606001D076C /* Extension */,
+				A3CEF80123F1459B001D076C /* Xib */,
+				A3CEF7FE23F14564001D076C /* AppConstant */,
+				A3CEF7F923F068AC001D076C /* Services */,
 				A3CEF7F623F05494001D076C /* ViewModel */,
 				A3CEF7F523F05446001D076C /* Model */,
-				A3CEF7EC23F04CB9001D076C /* View */,
+				A3CEF7EC23F04CB9001D076C /* ViewController */,
 				A3CEF7BC23EFDA51001D076C /* AppDelegate.swift */,
 				A3CEF7BE23EFDA51001D076C /* SceneDelegate.swift */,
 				A3CEF7C023EFDA51001D076C /* ViewController.swift */,
@@ -138,20 +165,22 @@
 			path = FruitDiaryUITests;
 			sourceTree = "<group>";
 		};
-		A3CEF7EC23F04CB9001D076C /* View */ = {
+		A3CEF7EC23F04CB9001D076C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				A3CEF7ED23F04CD3001D076C /* MainVC.swift */,
 				A3CEF7EF23F04E66001D076C /* HomeVC.swift */,
 				A3CEF7F123F04E7F001D076C /* AboutVC.swift */,
+				A3CEF80223F145AF001D076C /* AddFruitVC.swift */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		A3CEF7F523F05446001D076C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A3CEF7F323F05441001D076C /* FruitModel.swift */,
+				A3CEF81523F153E8001D076C /* FruitEntryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,8 +189,60 @@
 			isa = PBXGroup;
 			children = (
 				A3CEF7F723F054A9001D076C /* FruitsViewModel.swift */,
+				A3CEF81723F154A0001D076C /* FruitEntryListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A3CEF7F923F068AC001D076C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF7FA23F068BC001D076C /* WebService.swift */,
+				A3CEF7FC23F07B52001D076C /* Api.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A3CEF7FE23F14564001D076C /* AppConstant */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF7FF23F14573001D076C /* AppConstant.swift */,
+			);
+			path = AppConstant;
+			sourceTree = "<group>";
+		};
+		A3CEF80123F1459B001D076C /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF80923F1463E001D076C /* Cell */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		A3CEF80623F14606001D076C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF80723F14614001D076C /* UIColor+Ext.swift */,
+				A3CEF81323F14828001D076C /* Pin+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A3CEF80923F1463E001D076C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF80C23F1466E001D076C /* FruitCell.swift */,
+				A3CEF81923F15505001D076C /* FruitEntryCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A3CEF81023F146D9001D076C /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEF81123F146E5001D076C /* Singleton.swift */,
+			);
+			path = Singleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,14 +375,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3CEF7FB23F068BC001D076C /* WebService.swift in Sources */,
+				A3CEF80023F14573001D076C /* AppConstant.swift in Sources */,
 				A3CEF7C123EFDA51001D076C /* ViewController.swift in Sources */,
 				A3CEF7F823F054A9001D076C /* FruitsViewModel.swift in Sources */,
+				A3CEF80E23F1466E001D076C /* FruitCell.swift in Sources */,
 				A3CEF7F423F05441001D076C /* FruitModel.swift in Sources */,
 				A3CEF7F023F04E66001D076C /* HomeVC.swift in Sources */,
+				A3CEF80823F14614001D076C /* UIColor+Ext.swift in Sources */,
 				A3CEF7F223F04E7F001D076C /* AboutVC.swift in Sources */,
+				A3CEF80423F145AF001D076C /* AddFruitVC.swift in Sources */,
+				A3CEF81A23F15505001D076C /* FruitEntryCell.swift in Sources */,
 				A3CEF7EE23F04CD3001D076C /* MainVC.swift in Sources */,
+				A3CEF81423F14828001D076C /* Pin+Ext.swift in Sources */,
 				A3CEF7BD23EFDA51001D076C /* AppDelegate.swift in Sources */,
+				A3CEF7FD23F07B52001D076C /* Api.swift in Sources */,
+				A3CEF81223F146E5001D076C /* Singleton.swift in Sources */,
 				A3CEF7BF23EFDA51001D076C /* SceneDelegate.swift in Sources */,
+				A3CEF81823F154A0001D076C /* FruitEntryListViewModel.swift in Sources */,
+				A3CEF81623F153E8001D076C /* FruitEntryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

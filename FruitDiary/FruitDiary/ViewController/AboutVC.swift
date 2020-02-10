@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  AboutVC.swift
 //  FruitDiary
 //
 //  Created by Kai Xuan on 09/02/2020.
@@ -8,15 +8,10 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
-
+class AboutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.title = "Home"
-        // Do any additional setup after loading the view.
+        self.title = "About"
     }
-    
-
-
 }
