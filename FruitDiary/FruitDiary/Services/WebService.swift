@@ -27,4 +27,35 @@ final class Webservice {
         }.resume()
     }
     
+    func postMethod<T>(resource: Resource<T>, body: [String:Any], completion: @escaping (T?) -> ()) {
+        
+//        guard let url = URL(string: resource.url) else { return }
+        
+        var urlRequest = URLRequest(url: resource.url)
+        urlRequest.httpMethod = "POST"
+        
+        let params = body
+        
+        do {
+            let data = try JSONSerialization.data(withJSONObject: params, options: .init())
+            urlRequest.httpBody = data
+            urlRequest.setValue("application/json", forHTTPHeaderField: "content-type")
+            
+            URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                if let data = data {
+                    DispatchQueue.main.async {
+                        completion(resource.parse(data))
+                    }
+                } else{
+                    completion(nil)
+                }
+            }.resume()
+            
+        } catch {
+            completion(nil)
+        }
+        
+        
+    }
+    
 }

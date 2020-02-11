@@ -30,6 +30,9 @@
 		A3CEF81623F153E8001D076C /* FruitEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81523F153E8001D076C /* FruitEntryModel.swift */; };
 		A3CEF81823F154A0001D076C /* FruitEntryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81723F154A0001D076C /* FruitEntryListViewModel.swift */; };
 		A3CEF81A23F15505001D076C /* FruitEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81923F15505001D076C /* FruitEntryCell.swift */; };
+		A3CEF81D23F1B1AE001D076C /* EditFruitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81B23F1B1AE001D076C /* EditFruitVC.swift */; };
+		A3CEF81E23F1B1AE001D076C /* EditFruitVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF81C23F1B1AE001D076C /* EditFruitVC.xib */; };
+		A3CEF82023F1C807001D076C /* UIToolBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81F23F1C807001D076C /* UIToolBar+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		A3CEF81523F153E8001D076C /* FruitEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitEntryModel.swift; sourceTree = "<group>"; };
 		A3CEF81723F154A0001D076C /* FruitEntryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitEntryListViewModel.swift; sourceTree = "<group>"; };
 		A3CEF81923F15505001D076C /* FruitEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitEntryCell.swift; sourceTree = "<group>"; };
+		A3CEF81B23F1B1AE001D076C /* EditFruitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFruitVC.swift; sourceTree = "<group>"; };
+		A3CEF81C23F1B1AE001D076C /* EditFruitVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFruitVC.xib; sourceTree = "<group>"; };
+		A3CEF81F23F1C807001D076C /* UIToolBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolBar+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,8 @@
 				A3CEF7EF23F04E66001D076C /* HomeVC.swift */,
 				A3CEF7F123F04E7F001D076C /* AboutVC.swift */,
 				A3CEF80223F145AF001D076C /* AddFruitVC.swift */,
+				A3CEF81B23F1B1AE001D076C /* EditFruitVC.swift */,
+				A3CEF81C23F1B1AE001D076C /* EditFruitVC.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -224,6 +232,7 @@
 			children = (
 				A3CEF80723F14614001D076C /* UIColor+Ext.swift */,
 				A3CEF81323F14828001D076C /* Pin+Ext.swift */,
+				A3CEF81F23F1C807001D076C /* UIToolBar+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 			files = (
 				A3CEF7C923EFDA57001D076C /* LaunchScreen.storyboard in Resources */,
 				A3CEF7C623EFDA57001D076C /* Assets.xcassets in Resources */,
+				A3CEF81E23F1B1AE001D076C /* EditFruitVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,11 +385,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3CEF82023F1C807001D076C /* UIToolBar+Ext.swift in Sources */,
 				A3CEF7FB23F068BC001D076C /* WebService.swift in Sources */,
 				A3CEF80023F14573001D076C /* AppConstant.swift in Sources */,
 				A3CEF7C123EFDA51001D076C /* ViewController.swift in Sources */,
 				A3CEF7F823F054A9001D076C /* FruitsViewModel.swift in Sources */,
 				A3CEF80E23F1466E001D076C /* FruitCell.swift in Sources */,
+				A3CEF81D23F1B1AE001D076C /* EditFruitVC.swift in Sources */,
 				A3CEF7F423F05441001D076C /* FruitModel.swift in Sources */,
 				A3CEF7F023F04E66001D076C /* HomeVC.swift in Sources */,
 				A3CEF80823F14614001D076C /* UIColor+Ext.swift in Sources */,

@@ -11,4 +11,5 @@ import Foundation
 struct appConstant {
     static let themeColor = "#ff8c00"
     static let addIcon = "addIcon.png"
+    static let buttonWidth = 60
 }

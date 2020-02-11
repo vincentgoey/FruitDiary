@@ -10,4 +10,6 @@ import Foundation
 
 let domain = "https://fruitdiary.test.themobilelife.com/"
 
-let getAvailableFruit = "api/fruit"
+let getAvailableFruit   = domain+"api/fruit"
+let getFruitEntries     = domain+"api/entries"
+let createEntries = domain+"api/entries"

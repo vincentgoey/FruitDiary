@@ -27,4 +27,12 @@ struct FruitsViewModel: Decodable {
     func modelAt(_ index: Int) -> Fruit {
         return self.fruits[index]
     }
+    
+    func filter(id: Int) -> Fruit {
+        return self.fruits.filter({return $0.id == id})[0]
+    }
+    
+    func toArray() -> [Fruit] {
+        return self.fruits.map{$0}
+    }
 }
