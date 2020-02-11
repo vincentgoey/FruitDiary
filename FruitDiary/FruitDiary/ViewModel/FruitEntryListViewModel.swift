@@ -12,10 +12,13 @@ struct FruitEntryListViewModel {
     private var fruitEntries = [FruitEntryModel]()
     
     mutating func retrieveData(fruitsEntries: [FruitEntryModel]) {
+        
         self.fruitEntries.removeAll()
+
         fruitsEntries.forEach { (fruitEntry) in
             self.fruitEntries.append(fruitEntry)
         }
+        
     }
     
     func count() -> Int {

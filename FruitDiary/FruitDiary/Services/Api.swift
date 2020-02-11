@@ -12,4 +12,7 @@ let domain = "https://fruitdiary.test.themobilelife.com/"
 
 let getAvailableFruit   = domain+"api/fruit"
 let getFruitEntries     = domain+"api/entries"
-let createEntries = domain+"api/entries"
+let createEntries       = domain+"api/entries"
+let deleteSpecificEntry = domain+"api/entry/"
+let deleteAllEntry      = domain+"api/entries"
+let editFruit           = domain+"api/entry/"

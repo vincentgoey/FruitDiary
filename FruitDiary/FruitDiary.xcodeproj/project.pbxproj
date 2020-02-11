@@ -31,8 +31,8 @@
 		A3CEF81823F154A0001D076C /* FruitEntryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81723F154A0001D076C /* FruitEntryListViewModel.swift */; };
 		A3CEF81A23F15505001D076C /* FruitEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81923F15505001D076C /* FruitEntryCell.swift */; };
 		A3CEF81D23F1B1AE001D076C /* EditFruitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81B23F1B1AE001D076C /* EditFruitVC.swift */; };
-		A3CEF81E23F1B1AE001D076C /* EditFruitVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3CEF81C23F1B1AE001D076C /* EditFruitVC.xib */; };
 		A3CEF82023F1C807001D076C /* UIToolBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF81F23F1C807001D076C /* UIToolBar+Ext.swift */; };
+		A3CEF82223F340F2001D076C /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEF82123F340F2001D076C /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +83,8 @@
 		A3CEF81723F154A0001D076C /* FruitEntryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitEntryListViewModel.swift; sourceTree = "<group>"; };
 		A3CEF81923F15505001D076C /* FruitEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitEntryCell.swift; sourceTree = "<group>"; };
 		A3CEF81B23F1B1AE001D076C /* EditFruitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFruitVC.swift; sourceTree = "<group>"; };
-		A3CEF81C23F1B1AE001D076C /* EditFruitVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFruitVC.xib; sourceTree = "<group>"; };
 		A3CEF81F23F1C807001D076C /* UIToolBar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolBar+Ext.swift"; sourceTree = "<group>"; };
+		A3CEF82123F340F2001D076C /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +179,6 @@
 				A3CEF7F123F04E7F001D076C /* AboutVC.swift */,
 				A3CEF80223F145AF001D076C /* AddFruitVC.swift */,
 				A3CEF81B23F1B1AE001D076C /* EditFruitVC.swift */,
-				A3CEF81C23F1B1AE001D076C /* EditFruitVC.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -233,6 +232,7 @@
 				A3CEF80723F14614001D076C /* UIColor+Ext.swift */,
 				A3CEF81323F14828001D076C /* Pin+Ext.swift */,
 				A3CEF81F23F1C807001D076C /* UIToolBar+Ext.swift */,
+				A3CEF82123F340F2001D076C /* UIViewController+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -360,7 +360,6 @@
 			files = (
 				A3CEF7C923EFDA57001D076C /* LaunchScreen.storyboard in Resources */,
 				A3CEF7C623EFDA57001D076C /* Assets.xcassets in Resources */,
-				A3CEF81E23F1B1AE001D076C /* EditFruitVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +398,7 @@
 				A3CEF80423F145AF001D076C /* AddFruitVC.swift in Sources */,
 				A3CEF81A23F15505001D076C /* FruitEntryCell.swift in Sources */,
 				A3CEF7EE23F04CD3001D076C /* MainVC.swift in Sources */,
+				A3CEF82223F340F2001D076C /* UIViewController+Ext.swift in Sources */,
 				A3CEF81423F14828001D076C /* Pin+Ext.swift in Sources */,
 				A3CEF7BD23EFDA51001D076C /* AppDelegate.swift in Sources */,
 				A3CEF7FD23F07B52001D076C /* Api.swift in Sources */,

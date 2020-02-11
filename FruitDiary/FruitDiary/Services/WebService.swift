@@ -55,7 +55,22 @@ final class Webservice {
             completion(nil)
         }
         
+    }
+    
+    func deleteMethod(url: URL, completion: @escaping (Error?) -> ()) {
         
+        //Api Return 200 as long as params pass as numberic
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+        
+        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            if let error = error {
+                completion(error)
+                return
+            }
+            completion(nil)
+        }.resume()
+
     }
     
 }

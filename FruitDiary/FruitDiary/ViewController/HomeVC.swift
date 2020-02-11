@@ -73,13 +73,21 @@ class HomeVC: UIViewController {
         Webservice().load(resource: fruitEntriesResource) { result in
             self.fruitEntries.retrieveData(fruitsEntries: result ?? [])
             let dataArray = self.fruitEntries.toArray()
+            
             dataArray.forEach { (item) in
                 var stringArray = [String]()
                 item.fruit.forEach { (singleFruit) in
                     //GET TOTAL VITAMINS
                     let vitamin = Singleton.shared.availableFruits.filter(id: singleFruit.fruitId)
-                    stringArray.append("\(singleFruit.fruitType), Amount: \(singleFruit.amount), Vitamins: \(singleFruit.amount * vitamin.vitamins)")
+                    
+                    //Filter 0 fruits and negative fruits
+                    if singleFruit.amount > 0 {
+                        stringArray.append("\(singleFruit.fruitType), Amount: \(singleFruit.amount), Vitamins: \(singleFruit.amount * vitamin.vitamins)")
+                    }
+                    
                 }
+                
+                stringArray = stringArray.sorted(by: {$0 < $1})
                 let singleData = ExpandableData(isExpandable: true, titleLables: stringArray)
                 self.rowDetails.append(singleData)
             }
@@ -143,17 +151,12 @@ class HomeVC: UIViewController {
         left.tintColor = .black
         self.navigationItem.leftBarButtonItem = left
     }
-    
-    @objc func deleteButtonTapped() {
-        //Delete All Entry Api
-    }
 
 }
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     //UI Logic
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         if self.fruitEntries.count() < 0 {
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
@@ -198,8 +201,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         }
         
     }
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if !self.rowDetails[section].isExpandable {
@@ -283,21 +284,47 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         return contentView
     }
     
+    //Buton Function
+    
     @objc func handleEditButtonTapped(button: UIButton) {
         
         let section = button.tag - 20
         
-        let vc = EditFruitVC()
-        vc.fruitEntryToBeEdited = self.fruitEntries.modelAt(section)
+//        let vc = EditFruitVC()
+//        vc.fruitEntryToBeEdited = self.fruitEntries.modelAt(section)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = AddFruitVC()
+        vc.fruitEntry = self.fruitEntries.modelAt(section)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func handleDeleteButtonTapped(button: UIButton) {
         
         let section = button.tag - 80
-        
-//        let vc = EditFruitVC()
-//        vc.fruitEntryToBeEdited = self.fruitEntries.modelAt(section)
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let seletedId = self.fruitEntries.modelAt(section).id
+
+        guard let url = URL(string: deleteSpecificEntry+"\(seletedId)") else { return }
+        Webservice().deleteMethod(url: url) { (err) in
+            if err != nil {
+                print("Failed To Delete")
+                return
+            }
+            self.fetchHomePageData()
+        }
+
     }
+    
+    @objc func deleteButtonTapped() {
+        //Delete All Entry Api
+        guard let url = URL(string: deleteAllEntry) else { return }
+        Webservice().deleteMethod(url: url) { (err) in
+            if err != nil {
+                print("Failed To Delete")
+                return
+            }
+            self.fetchHomePageData()
+        }
+    }
+    
 }
