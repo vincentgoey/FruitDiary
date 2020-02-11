@@ -16,14 +16,28 @@ struct ExpandableData {
 class HomeVC: UIViewController {
     
     var tableView = UITableView()
+    var rowDetails = [ExpandableData]()
+    private var fruitEntries = FruitEntryListViewModel()
+    private var datePicker = UIDatePicker()
+    private var toolBar = UIToolbar()
+    
     struct Cells {
         static let cell = "Cell"
     }
     
-    private var fruitEntries = FruitEntryListViewModel()
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:#selector(handleRefresh(_:)), for: UIControl.Event.valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Updating") //if you want a text
+        return refreshControl
+    }()
     
-    let sections = ["Section 1", "Section 2", "Section 3","Section 4","Section 5","Section 6","Section 7"]
-    var rowDetails = [ExpandableData]()
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            self.fetchHomePageData()
+            refreshControl.endRefreshing()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,32 +45,33 @@ class HomeVC: UIViewController {
         self.setupNavBar()
         self.loadAvailableFruits()
         self.configureTableView()
+        self.configureDatePicker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.fetchHomePageData()
     }
     
-    func addEntryApi() {
-        print("How Many Times")
+    func addEntryApi(date: String) {
+
         let responseBody = Resource<[String:Any]>(url: URL(string: createEntries)!) { data in
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             return json as? [String : Any]
         }
 
         let parameters: [String:Any] = [
-            "date": "2020-09-20"
+            "date": "\(date)"
         ]
         
         Webservice().postMethod(resource: responseBody, body: parameters) { result in
-            print("result: ", result!)
+
             let code = result?["code"] ?? 0
             
             switch (code as! Int) {
-                case 200:
-                    print("Success")
+                case 0:
+                    self.fetchHomePageData()
                 default:
-                    print("Faild With Some Reason, Code = \(code), Message = \(result?["message"] ?? "")")
+                    self.popupAlert(title: "System", message: "Faild With Some Reason, Code = \(code), Message = \(result?["message"] ?? "")", actionTitles: ["Ok"], actions:[{action1 in}])
             }
         }
     }
@@ -92,10 +107,13 @@ class HomeVC: UIViewController {
                 self.rowDetails.append(singleData)
             }
             
+            self.tableView.isHidden = false
             self.tableView.reloadData()
             
             if self.fruitEntries.count() > 0 {
                 self.setupDeleteAllButton()
+            } else {
+                self.navigationItem.leftBarButtonItem = nil
             }
         }
     }
@@ -104,18 +122,44 @@ class HomeVC: UIViewController {
         self.title = "Fruits"
         view.addSubview(tableView)
         
-        setTableViewDelegate()
+        tableView.delegate      = self
+        tableView.dataSource    = self
         tableView.rowHeight = 40
         tableView.tableFooterView = UIView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Cells.cell)
-//        tableView.refreshControl = refreshControl
+        tableView.isHidden = true
+        tableView.refreshControl = refreshControl
         tableView.pin(to: view)
         
     }
+    
+    func configureDatePicker() {
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+        datePicker.isHidden = true
         
-    func setTableViewDelegate() {
-        tableView.delegate      = self
-        tableView.dataSource    = self
+        toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 350, width: UIScreen.main.bounds.size.width, height: 50))
+        toolBar.barStyle = .default
+        toolBar.items = [UIBarButtonItem.init(title: "Add", style: .done, target: self, action: #selector(addDate)),UIBarButtonItem.init(title: "Cancel", style: .done, target: self, action: #selector(dismissPicker))]
+        toolBar.isHidden = true
+        
+        self.view.addSubview(toolBar)
+        self.view.addSubview(datePicker)
+    }
+    
+    @objc func dismissPicker() {
+        datePicker.isHidden = true
+        toolBar.isHidden = true
+    }
+    
+    @objc func addDate() {
+        datePicker.isHidden = true
+        toolBar.isHidden = true
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let selectedDate = dateFormatter.string(from: datePicker.date)
+        self.addEntryApi(date: selectedDate)
     }
     
     func loadAvailableFruits() {
@@ -142,8 +186,9 @@ class HomeVC: UIViewController {
     }
     
     @objc func addNewFruitEntry(){
-        let vc = AddFruitVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+        //Add Date
+        datePicker.isHidden = !datePicker.isHidden
+        toolBar.isHidden = !toolBar.isHidden
     }
     
     func setupDeleteAllButton() {
@@ -158,7 +203,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     //UI Logic
     func numberOfSections(in tableView: UITableView) -> Int {
-        if self.fruitEntries.count() < 0 {
+        if self.fruitEntries.count() <= 0 {
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: self.tableView.bounds.size.height))
             noDataLabel.text = "No Data Available"
             noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)

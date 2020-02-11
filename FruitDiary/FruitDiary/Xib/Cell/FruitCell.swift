@@ -86,7 +86,6 @@ class FruitCell: UITableViewCell {
         fruittNameLabel.translatesAutoresizingMaskIntoConstraints                                                   = false
         fruittNameLabel.leadingAnchor.constraint(equalTo: fruitImageView.trailingAnchor, constant: 16).isActive     = true
         fruittNameLabel.heightAnchor.constraint(equalToConstant: 30).isActive                                       = true
-//        fruittNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive                  = true
         fruittNameLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8).isActive             = true
         fruittNameLabel.widthAnchor.constraint(equalToConstant: 120).isActive = true
         
@@ -95,7 +94,6 @@ class FruitCell: UITableViewCell {
         fruitSubLabel.leadingAnchor.constraint(equalTo: fruitImageView.trailingAnchor, constant: 16).isActive       = true
         fruitSubLabel.heightAnchor.constraint(equalToConstant: 30).isActive                                         = true
         fruitSubLabel.widthAnchor.constraint(equalToConstant: 120).isActive = true
-//        fruitSubLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive                    = true
     }
     
     func setTextFieldConstraints() {

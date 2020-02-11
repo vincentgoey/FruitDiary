@@ -41,7 +41,7 @@ class AddFruitVC: UIViewController {
     }
     
     func configureAddButton() {
-        let rightButton = UIBarButtonItem(title: "Edit",  style: .plain, target: self, action:#selector(addButtonTapped))
+        let rightButton = UIBarButtonItem(title: "Update",  style: .plain, target: self, action:#selector(addButtonTapped))
         rightButton.tintColor = .black
         self.navigationItem.rightBarButtonItem = rightButton
     }
@@ -160,8 +160,7 @@ extension AddFruitVC {
             let idGoingToChangeToZero = self.addedFruitId.filter{!latestAddedFruitsId.contains($0)}
             self.updateZeroFruitToAddedFruit(ids: idGoingToChangeToZero)
         } else {
-            //remove entire entry
-            removeAll()
+            self.pop()
         }
         
     }
@@ -180,14 +179,14 @@ extension AddFruitVC {
         ]
 
         Webservice().postMethod(resource: responseBody, body: parameters) { result in
-            print("result: ", result!)
+
             let code = result?["code"] ?? 0
 
             switch (code as! Int) {
                 case 200:
                     self.pop()
                 default:
-                    self.popupAlert(title: "System", message: "Faild With Some Reason, Code = \(code), Message = \(result?["message"] ?? "")", actionTitles: ["Ok"], actions:[])
+                    self.popupAlert(title: "System", message: "Faild With Some Reason, Code = \(code), Message = \(result?["message"] ?? "")", actionTitles: ["Ok"], actions:[{action1 in}])
             }
         }
         
@@ -214,7 +213,7 @@ extension AddFruitVC {
                 case 200:
                     self.pop()
                 default:
-                    self.popupAlert(title: "System", message: "Faild With Some Reason, Code = \(code), Message = \(result?["message"] ?? "")", actionTitles: ["Ok"], actions:[])
+                    self.popupAlert(title: "System", message: "Faild With Some Reason, Code = \(code), Message = \(result?["message"] ?? "")", actionTitles: ["Ok"], actions:[{action1 in}])
             }
         }
         
@@ -223,17 +222,6 @@ extension AddFruitVC {
     func updateZeroFruitToAddedFruit(ids: [Int]) {
         ids.forEach { (id) in
             self.updateFruits(id: id, amountOfFruit: 0)
-        }
-    }
-    
-    func removeAll() {
-        guard let url = URL(string: deleteAllEntry) else { return }
-        Webservice().deleteMethod(url: url) { (err) in
-            if err != nil {
-                print("Failed To Delete")
-                return
-            }
-            self.navigationController?.popViewController(animated: true)
         }
     }
     
